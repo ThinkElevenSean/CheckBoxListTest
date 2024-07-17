@@ -1,0 +1,35 @@
+﻿@inherits InputBase<List<CheckBoxListItem>>
+
+<div>
+
+    <div>
+        <label>
+            @if (!string.IsNullOrEmpty(Label))
+            {
+                @Label
+            }
+        </label>
+    </div>
+
+
+    @if (CurrentValue != null)
+    {
+        <div>
+
+            @foreach (var item in CurrentValue)
+            {
+                <div>
+
+                    <label>
+                        <input type="checkbox" checked="@(item.Selected ? "true" : null)" @onchange="eventArgs => { CheckboxClicked(item.Text, eventArgs.Value); }" />
+                        @item.Text
+                    </label>
+
+                </div>
+            }
+
+        </div>
+
+    }
+
+</div> 

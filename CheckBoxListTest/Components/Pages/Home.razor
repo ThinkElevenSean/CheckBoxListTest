@@ -1,0 +1,13 @@
+﻿@page "/"
+
+
+<CheckBoxListComponent Label="Test checkboxlist" @bind-Value=@Data DefaultSelectedIndex="0"/>
+
+@code {
+    List<CheckBoxListItem> Data = [
+
+        new() { Value = 1, Text = "Item 1", Selected = true},
+        new() { Value = 2, Text = "Item 2"}
+
+        ];
+}
